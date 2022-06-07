@@ -29,7 +29,7 @@
 #include "config.h"
 
 #include <fuse.h>
-#include <fuse/fuse_lowlevel.h>
+#include <fuse_lowlevel.h>
 #include <fuse_opt.h>
 #include <stdio.h>
 #include <stdlib.h>

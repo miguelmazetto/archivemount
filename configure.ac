@@ -13,29 +13,29 @@ RELEASE_DATE="20 April 2020"
 AC_SUBST(RELEASE_DATE)
 
 # Check for libfuse
-PKG_CHECK_EXISTS(fuse)
-PKG_CHECK_MODULES([FUSE], [fuse >= 2.6],,
-    AC_MSG_ERROR([libfuse>=2.6 not found.
-
-                  If libfuse is installed then perhaps you should set
-                  the PKG_CONFIG_PATH=/dir/containing/fuse.pc environment
-                  variable]))
-AC_SUBST([FUSE_LIBS])
-AC_SUBST([FUSE_CFLAGS])
+# PKG_CHECK_EXISTS(fuse)
+# PKG_CHECK_MODULES([FUSE], [fuse >= 2.6],,
+#     AC_MSG_ERROR([libfuse>=2.6 not found.
+# 
+#                   If libfuse is installed then perhaps you should set
+#                   the PKG_CONFIG_PATH=/dir/containing/fuse.pc environment
+#                   variable]))
+# AC_SUBST([FUSE_LIBS])
+# AC_SUBST([FUSE_CFLAGS])
 
 
 # Check for libarchive (no pkg-config support)
-AC_CHECK_LIB([archive], [archive_read_new], [ARCHIVE_LIBS=-larchive],
-    AC_MSG_ERROR([libarchive not found.
-                  If libarchive is installed then perhaps you should set
-                  the LDFLAGS=-L/nonstandard/lib/dir environment variable]))
-AC_SUBST([ARCHIVE_LIBS])
-AC_CHECK_HEADERS([archive.h archive_entry.h],,
-    AC_MSG_ERROR([libarchive headers not found.
-
-                  If the libarchive headers are installed then perhaps you
-                  should set the CPPFLAGS=-I/nonstandard/include/dir
-                  environment variable]))
+# AC_CHECK_LIB([archive], [archive_read_new], [ARCHIVE_LIBS=-larchive],
+#     AC_MSG_ERROR([libarchive not found.
+#                   If libarchive is installed then perhaps you should set
+#                   the LDFLAGS=-L/nonstandard/lib/dir environment variable]))
+# AC_SUBST([ARCHIVE_LIBS])
+# AC_CHECK_HEADERS([archive.h archive_entry.h],,
+#     AC_MSG_ERROR([libarchive headers not found.
+# 
+#                   If the libarchive headers are installed then perhaps you
+#                   should set the CPPFLAGS=-I/nonstandard/include/dir
+#                   environment variable]))
 
 AC_CHECK_HEADERS([regex.h],,
     AC_MSG_ERROR([regex.h not found.
